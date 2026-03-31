@@ -18,6 +18,14 @@ const ICON_SRC = {
   dark: "/brand/arivo-labs-icon-dark.svg",
 } as const;
 
+/** Light UI → dark logo asset; dark UI → light logo asset (matches favicon metadata). */
+function logoSrcForUiTheme(
+  source: typeof ICON_SRC | typeof HORIZONTAL_SRC,
+  uiTheme: "light" | "dark"
+) {
+  return uiTheme === "light" ? source.dark : source.light;
+}
+
 const HORIZONTAL_SRC = {
   light: "/brand/arivo-labs-horizontal-light.svg",
   dark: "/brand/arivo-labs-horizontal-dark.svg",
@@ -49,7 +57,7 @@ export function BrandLogo({
   if (theme !== "auto") {
     return (
       <Image
-        src={source[theme]}
+        src={logoSrcForUiTheme(source, theme)}
         alt="Arivo Labs"
         width={dims.width}
         height={dims.height}
@@ -62,7 +70,7 @@ export function BrandLogo({
   return (
     <span className={cn("inline-flex items-center", className)}>
       <Image
-        src={source.light}
+        src={logoSrcForUiTheme(source, "light")}
         alt="Arivo Labs"
         width={dims.width}
         height={dims.height}
@@ -70,7 +78,7 @@ export function BrandLogo({
         className="h-auto w-auto dark:hidden"
       />
       <Image
-        src={source.dark}
+        src={logoSrcForUiTheme(source, "dark")}
         alt="Arivo Labs"
         width={dims.width}
         height={dims.height}
