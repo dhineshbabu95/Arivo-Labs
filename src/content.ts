@@ -6,7 +6,7 @@ export const site = {
   name: "Arivo Labs",
   company: "Arivo Labs",
   tagline: "Cloud, Data & AI Systems for Growing Businesses",
-  url: "https://www.dhineshbabu.com",
+  url: "https://www.arivolabs.com",
   email: "dhinesh.babu2511@gmail.com",
   linkedin: "https://www.linkedin.com/in/dhineshbabudata/",
   location: "Sydney, NSW, Australia",
