@@ -52,12 +52,21 @@ export const metadata: Metadata = {
     title: `${site.name} | ${site.tagline}`,
     description:
       "From no digital setup to a professional online presence—websites, dashboards, and automation for clinics, law firms, gyms, restaurants, and local services.",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Arivo Labs — Digital transformation made simple",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: `${site.name} | ${site.tagline}`,
     description:
       "Websites, analytics, and automation for businesses ready to go digital.",
+    images: ["/og.png"],
   },
   icons: {
     icon: [

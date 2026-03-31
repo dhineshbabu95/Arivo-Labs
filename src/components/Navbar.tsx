@@ -29,9 +29,27 @@ export function Navbar() {
         <nav className="flex min-h-[3.5rem] items-center justify-between gap-2 py-2 sm:min-h-0 sm:h-[4.25rem] sm:py-0">
           <Link
             href="/"
-            className="font-display text-base font-semibold tracking-tight text-foreground transition-colors duration-200 hover:text-primary sm:text-lg"
+            className="flex shrink-0 items-center outline-none transition-opacity hover:opacity-90 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
           >
-            {site.name}
+            <span className="sr-only">{site.name}</span>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/brand/arivo-labs-horizontal-light.svg"
+              alt=""
+              aria-hidden
+              className="h-8 w-auto dark:hidden sm:h-9"
+              width={200}
+              height={44}
+            />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/brand/arivo-labs-horizontal-dark.svg"
+              alt=""
+              aria-hidden
+              className="hidden h-8 w-auto dark:block sm:h-9"
+              width={200}
+              height={44}
+            />
           </Link>
 
           <div className="flex items-center gap-0.5">
