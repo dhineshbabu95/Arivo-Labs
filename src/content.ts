@@ -6,7 +6,7 @@ export const site = {
   name: "Dhinesh Babu",
   company: "Arivo Labs",
   tagline: "Cloud, data & web systems",
-  url: "https://dhineshbabu.com",
+  url: "https://www.dhineshbabu.com",
   email: "dhinesh.babu2511@gmail.com",
   linkedin: "https://www.linkedin.com/in/dhineshbabudata/",
   phone: {
