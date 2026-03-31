@@ -11,11 +11,13 @@ import { cn } from "@/lib/utils";
 import { home, site } from "@/content";
 
 const NAV = [
-  { href: "/#about", label: "About" },
-  { href: "/#projects", label: "Projects" },
   { href: "/#services", label: "Services" },
-  { href: "/#beyond", label: "Beyond work" },
-  { href: "/#contact", label: "Contact" },
+  { href: "/#how-it-works", label: "How it works" },
+  { href: "/#before-after", label: "Before & after" },
+  { href: "/#audience", label: "Who it's for" },
+  { href: "/#results", label: "Results" },
+  { href: "/#process", label: "Process" },
+  { href: "/#trust", label: "Trust" },
 ];
 
 export function Navbar() {
@@ -33,13 +35,13 @@ export function Navbar() {
           </Link>
 
           <div className="flex items-center gap-0.5">
-            <div className="hidden items-center gap-0.5 md:flex">
+            <div className="hidden items-center gap-0.5 xl:flex">
               {NAV.map((item) => (
                 <Button
                   key={item.href}
                   variant="ghost"
                   asChild
-                  className="h-9 overflow-visible px-3 hover:bg-transparent"
+                  className="h-9 overflow-visible px-2 hover:bg-transparent"
                 >
                   <Link href={item.href} className="nav-link text-sm">
                     {item.label}
@@ -47,12 +49,12 @@ export function Navbar() {
                 </Button>
               ))}
               <ThemeToggle className="ml-1" />
-              <Button asChild size="sm" className="ml-2">
+              <Button asChild size="sm" className="ml-2 shrink-0">
                 <Link href="/contact">{home.hero.primaryCta}</Link>
               </Button>
             </div>
 
-            <div className="flex items-center gap-1 md:hidden">
+            <div className="flex items-center gap-1 xl:hidden">
               <ThemeToggle />
               <Button
                 type="button"
@@ -70,7 +72,7 @@ export function Navbar() {
 
         <div
           className={cn(
-            "border-t border-border/60 bg-muted/30 md:hidden dark:bg-muted/20",
+            "border-t border-border/60 bg-muted/30 xl:hidden dark:bg-muted/20",
             open ? "block" : "hidden"
           )}
         >

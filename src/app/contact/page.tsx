@@ -50,7 +50,7 @@ export default function ContactPage() {
           {contact.intro.includes(brandName) ? (
             <>
               {contact.intro.split(brandName)[0]}
-              <span className="font-display font-bold tracking-tight text-amber-600 dark:text-amber-400">{brandName}</span>
+              <span className="font-display font-bold tracking-tight text-primary">{brandName}</span>
               {contact.intro.split(brandName)[1]}
             </>
           ) : (

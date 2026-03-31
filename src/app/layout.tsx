@@ -1,26 +1,32 @@
 import type { Metadata, Viewport } from "next";
-import { DM_Sans, Syne } from "next/font/google";
+import { IBM_Plex_Sans, Inter, Sora } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { ThemeProvider } from "@/components/theme-provider";
-import { FunnyInitialSplash } from "@/components/FunnyInitialSplash";
 import {
   SplashTransitionChrome,
   SplashTransitionProvider,
 } from "@/components/SplashTransitionLayout";
 import { site } from "@/content";
 
-const dmSans = DM_Sans({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-dm-sans",
+  variable: "--font-inter",
   display: "swap",
 });
 
-const syne = Syne({
+const sora = Sora({
   subsets: ["latin"],
-  variable: "--font-syne",
+  variable: "--font-sora",
+  display: "swap",
+});
+
+const ibmPlexSans = IBM_Plex_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-ibm-plex",
   display: "swap",
 });
 
@@ -30,13 +36,13 @@ export const metadata: Metadata = {
     template: `%s | ${site.name}`,
   },
   description:
-    "Arivo Labs builds cloud, data, and AI systems for growing businesses. Practical architecture, reliable delivery, and long-term maintainability.",
+    "Arivo Labs makes digital transformation simple: professional websites, clear dashboards, and practical automation for SMBs—explained with visuals, not jargon.",
   keywords: [
-    "cloud",
-    "data pipelines",
-    "automation",
-    "internal tools",
-    "DevOps",
+    "small business website",
+    "local business digital",
+    "analytics for small business",
+    "business automation",
+    "Arivo Labs",
   ],
   authors: [{ name: site.name, url: site.url }],
   openGraph: {
@@ -45,13 +51,13 @@ export const metadata: Metadata = {
     siteName: site.name,
     title: `${site.name} | ${site.tagline}`,
     description:
-      "Arivo Labs delivers cloud, data, and automation systems that help businesses scale with confidence.",
+      "From no digital setup to a professional online presence—websites, dashboards, and automation for clinics, law firms, gyms, restaurants, and local services.",
   },
   twitter: {
     card: "summary_large_image",
     title: `${site.name} | ${site.tagline}`,
     description:
-      "Arivo Labs: cloud, data, and AI systems for business growth.",
+      "Websites, analytics, and automation for businesses ready to go digital.",
   },
   icons: {
     icon: [
@@ -68,8 +74,8 @@ export const viewport: Viewport = {
   initialScale: 1,
   viewportFit: "cover",
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#E6EDF3" },
-    { media: "(prefers-color-scheme: dark)", color: "#0B1F33" },
+    { media: "(prefers-color-scheme: light)", color: "#FFFFFF" },
+    { media: "(prefers-color-scheme: dark)", color: "#0B0B0F" },
   ],
 };
 
@@ -81,13 +87,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${dmSans.variable} ${syne.variable}`}
+      className={`${inter.variable} ${sora.variable} ${ibmPlexSans.variable}`}
       suppressHydrationWarning
     >
       <body className="min-h-screen font-sans antialiased">
         <ThemeProvider>
           <SplashTransitionProvider>
-            <FunnyInitialSplash />
             <SplashTransitionChrome>
               <ScrollToTop />
               <Navbar />

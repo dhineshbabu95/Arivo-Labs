@@ -1,32 +1,26 @@
-import { SiteZone } from "@/components/SiteZone";
 import {
-  About,
-  BeyondWork,
+  BeforeAfter,
   ContactCta,
   Hero,
-  Projects,
+  HowItWorks,
+  Process,
+  Results,
   Services,
+  Trust,
+  WhoItsFor,
 } from "@/components/site";
 
 export default function HomePage() {
   return (
     <>
       <Hero />
-      <About />
-
-      <div className="site-zone-bridge" aria-hidden />
-
-      <SiteZone variant="build">
-        <Projects />
-        <Services />
-      </SiteZone>
-
-      <div className="site-zone-bridge site-zone-bridge-beyond" aria-hidden />
-
-      <SiteZone variant="beyond">
-        <BeyondWork />
-      </SiteZone>
-
+      <WhoItsFor />
+      <Services />
+      <HowItWorks />
+      <BeforeAfter />
+      <Results />
+      <Process />
+      <Trust />
       <ContactCta />
     </>
   );

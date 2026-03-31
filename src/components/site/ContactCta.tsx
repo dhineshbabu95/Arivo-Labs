@@ -5,7 +5,7 @@ import { Container } from "@/components/Container";
 import { Reveal, RevealItem, RevealStagger } from "@/components/Reveal";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { contact, home, site } from "@/content";
+import { contact, home } from "@/content";
 
 export function ContactCta() {
   return (
@@ -33,6 +33,11 @@ export function ContactCta() {
                 <RevealItem soft>
                   <p className="site-body editorial-measure mt-4 sm:mt-5">
                     {home.contact.intro}
+                  </p>
+                </RevealItem>
+                <RevealItem soft>
+                  <p className="site-body mt-4 max-w-xl text-sm sm:mt-5">
+                    {home.contact.reassurance}
                   </p>
                 </RevealItem>
                 <RevealItem soft>
@@ -64,15 +69,9 @@ export function ContactCta() {
                     asChild
                     variant="outline"
                     size="lg"
-                    className="h-12 w-full min-h-12 border-border/80 bg-background/35 backdrop-blur-sm transition-[transform,background-color] duration-300 hover:-translate-y-0.5 hover:bg-background/60 sm:h-11 sm:w-auto"
+                    className="group h-12 w-full min-h-12 border-border/80 bg-background/35 backdrop-blur-sm transition-[transform,background-color] duration-300 hover:-translate-y-0.5 hover:bg-background/60 sm:h-11 sm:w-auto"
                   >
-                    <Link
-                      href={site.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {contact.linkedinLabel}
-                    </Link>
+                    <Link href="/contact">{home.hero.secondaryCta}</Link>
                   </Button>
                 </RevealItem>
               </RevealStagger>

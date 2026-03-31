@@ -6,7 +6,7 @@ import { ProfilePortrait } from "@/components/ProfilePortrait";
 export const metadata = {
   title: "About",
   description:
-    "About Arivo Labs - a systems-focused technology studio building cloud, data, and AI platforms for growing businesses.",
+    "Arivo Labs helps SMBs with websites, analytics, and automation—practical digital delivery without the jargon.",
 };
 
 export default function AboutPage() {
@@ -24,7 +24,7 @@ export default function AboutPage() {
                 {paragraph.includes(brandName) ? (
                   <>
                     {paragraph.split(brandName)[0]}
-                    <span className="font-display font-bold tracking-tight text-amber-600 dark:text-amber-400">{brandName}</span>
+                    <span className="font-display font-bold tracking-tight text-primary">{brandName}</span>
                     {paragraph.split(brandName)[1]}
                   </>
                 ) : (

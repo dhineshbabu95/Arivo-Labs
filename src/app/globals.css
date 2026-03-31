@@ -3,114 +3,113 @@
 @tailwind utilities;
 
 /*
- * Disciplined builder palette (HSL values = exact hex mapping)
- *
- * Base (~50%):     #0B1F33, #112A44, #1E3A5F
- * Text (~30%):    #E6EDF3, #9FB3C8
- * Primary (~15%): #2563EB, #3B82F6 (--primary, --primary-bright)
- * Accent: warm highlight for eyebrows — light theme uses a darker amber for WCAG on pale
- *   backgrounds; dark theme keeps the brighter gold (#F59E0B family).
- * Secondary (~1%):#22C55E — success / positive feedback only
+ * Samurai Jack–inspired palette (Arivo Labs)
+ * Dark base #0B0B0F / #1A1A22 · Light surfaces #F5F5F5 / #CFCFCF
+ * Orange #FF9F1C · Red #FF3B3B · Green #00FF9C · Blue #3A86FF
  */
 
 /* -------------------------------------------------------------------------- */
-/* Light — high-contrast, flat planes                                           */
+/* Light                                                                       */
 /* -------------------------------------------------------------------------- */
 @layer base {
   :root {
-    --background: 210 28% 93%;
-    --foreground: 210 65% 12%;
+    --background: 0 0% 100%;
+    --foreground: 240 15% 5%;
 
-    --card: 210 28% 93%;
-    --card-foreground: 210 65% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 15% 5%;
 
-    --popover: 210 28% 93%;
-    --popover-foreground: 210 65% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 15% 5%;
 
-    --primary: 217 91% 53%;
-    --primary-bright: 217 91% 60%;
-    --primary-foreground: 210 28% 93%;
+    --primary: 32 100% 50%;
+    --primary-bright: 32 100% 55%;
+    --primary-foreground: 240 15% 5%;
 
-    --secondary: 211 24% 88%;
-    --secondary-foreground: 210 65% 12%;
+    --secondary: 240 8% 92%;
+    --secondary-foreground: 240 15% 5%;
 
-    --muted: 211 22% 86%;
-    --muted-foreground: 212 52% 25%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 240 4% 38%;
 
-    /* Deeper amber-bronze (~#a65f15 / amber-800-ish) — readable on 210 28% 93% backgrounds */
-    --accent: 26 88% 34%;
-    /* If accent is ever used as a fill (menus, chips), use light text on it */
-    --accent-foreground: 40 40% 98%;
+    --accent: 32 100% 48%;
+    --accent-foreground: 240 15% 5%;
 
-    --destructive: 217 72% 40%;
-    --destructive-foreground: 210 28% 93%;
+    --destructive: 0 100% 58%;
+    --destructive-foreground: 0 0% 100%;
 
-    --success: 142 71% 45%;
-    --success-foreground: 210 28% 93%;
+    --success: 158 100% 42%;
+    --success-foreground: 240 15% 5%;
 
-    --border: 211 26% 78%;
-    --input: 211 26% 78%;
-    --ring: 217 91% 53%;
+    --border: 240 6% 82%;
+    --input: 240 6% 82%;
+    --ring: 217 100% 58%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --zone-build-tint: 217 91% 53%;
-    --zone-beyond-tint: 212 52% 25%;
+    --zone-build-tint: 32 100% 50%;
+    --zone-beyond-tint: 240 4% 38%;
 
-    --card-shadow: 0 1px 0 hsl(210 65% 12% / 0.06),
-      0 1px 3px hsl(210 65% 12% / 0.08);
-    --elevated-shadow: 0 4px 24px -4px hsl(210 65% 12% / 0.1),
-      0 1px 2px hsl(210 65% 12% / 0.06);
+    --brand-red: 0 100% 62%;
+    --brand-green: 158 100% 50%;
+    --brand-blue: 217 100% 62%;
+
+    --card-shadow: 0 1px 0 hsl(240 15% 5% / 0.05),
+      0 1px 3px hsl(240 15% 5% / 0.06);
+    --elevated-shadow: 0 4px 24px -4px hsl(240 15% 5% / 0.1),
+      0 1px 2px hsl(240 15% 5% / 0.05);
     --nav-shadow: 0 1px 0 hsl(var(--border));
 
-    /* Horizontal gutter — scales with viewport; use full browser width (no max-w-6xl cap) */
     --site-padding-x: 1rem;
   }
 
   /* ------------------------------------------------------------------------ */
-  /* Dark — base-led, minimal noise                                             */
+  /* Dark (default theme)                                                      */
   /* ------------------------------------------------------------------------ */
   .dark {
-    --background: 210 65% 12%;
-    --foreground: 210 28% 93%;
+    --background: 240 15% 5%;
+    --foreground: 0 0% 96%;
 
-    --card: 210 60% 17%;
-    --card-foreground: 210 28% 93%;
+    --card: 240 12% 12%;
+    --card-foreground: 0 0% 96%;
 
-    --popover: 210 60% 17%;
-    --popover-foreground: 210 28% 93%;
+    --popover: 240 12% 12%;
+    --popover-foreground: 0 0% 96%;
 
-    --primary: 217 91% 53%;
-    --primary-bright: 217 91% 60%;
-    --primary-foreground: 210 28% 93%;
+    --primary: 32 100% 55%;
+    --primary-bright: 32 100% 60%;
+    --primary-foreground: 240 15% 5%;
 
-    --secondary: 212 48% 20%;
-    --secondary-foreground: 210 28% 93%;
+    --secondary: 240 10% 16%;
+    --secondary-foreground: 0 0% 96%;
 
-    --muted: 212 52% 25%;
-    --muted-foreground: 211 28% 70%;
+    --muted: 240 10% 18%;
+    --muted-foreground: 0 0% 81%;
 
-    /* Brighter gold — reads clearly on dark navy; user preference unchanged */
-    --accent: 38 92% 52%;
-    --accent-foreground: 210 65% 12%;
+    --accent: 32 100% 55%;
+    --accent-foreground: 240 15% 5%;
 
-    --destructive: 217 65% 48%;
-    --destructive-foreground: 210 28% 93%;
+    --destructive: 0 100% 62%;
+    --destructive-foreground: 0 0% 100%;
 
-    --success: 142 71% 45%;
-    --success-foreground: 210 65% 12%;
+    --success: 158 100% 50%;
+    --success-foreground: 240 15% 5%;
 
-    --border: 212 38% 22%;
-    --input: 212 38% 22%;
-    --ring: 217 91% 60%;
+    --border: 240 10% 20%;
+    --input: 240 10% 20%;
+    --ring: 217 100% 62%;
 
-    --zone-build-tint: 217 91% 53%;
-    --zone-beyond-tint: 211 28% 70%;
+    --zone-build-tint: 32 100% 55%;
+    --zone-beyond-tint: 0 0% 81%;
+
+    --brand-red: 0 100% 62%;
+    --brand-green: 158 100% 50%;
+    --brand-blue: 217 100% 62%;
 
     --card-shadow: 0 1px 0 hsl(0 0% 100% / 0.04),
-      0 2px 12px hsl(210 65% 5% / 0.35);
-    --elevated-shadow: 0 8px 32px -8px hsl(210 65% 4% / 0.45),
-      0 1px 4px hsl(210 65% 4% / 0.3);
+      0 2px 12px hsl(0 0% 0% / 0.35);
+    --elevated-shadow: 0 8px 32px -8px hsl(0 0% 0% / 0.45),
+      0 1px 4px hsl(0 0% 0% / 0.3);
     --nav-shadow: 0 1px 0 hsl(0 0% 100% / 0.06);
   }
 }
@@ -349,17 +348,16 @@
 .hero-aurora {
   background: radial-gradient(
     ellipse 120% 70% at 50% -30%,
-    hsl(var(--primary) / 0.07),
+    hsl(var(--primary) / 0.08),
     transparent 55%
   );
 }
 
-/* Top-right wash — matches reference hero (soft blue behind nav / visual) */
 .dark .hero-aurora {
   background: radial-gradient(
     ellipse 95% 60% at 82% -5%,
-    hsl(var(--primary-bright) / 0.11),
-    hsl(217 85% 48% / 0.04) 42%,
+    hsl(var(--primary-bright) / 0.12),
+    hsl(var(--brand-blue) / 0.06) 42%,
     transparent 58%
   );
 }
@@ -442,6 +440,10 @@
     @apply text-[11px] font-semibold uppercase tracking-[0.18em] text-accent;
   }
 
+  .font-diagram {
+    font-family: var(--font-ibm-plex), var(--font-inter), system-ui, sans-serif;
+  }
+
   .site-section-title {
     @apply font-display text-[1.75rem] font-semibold leading-[1.08] tracking-[-0.035em] text-foreground sm:text-[1.875rem] sm:leading-tight md:text-[2.25rem] lg:text-[2.375rem];
   }
@@ -457,15 +459,9 @@
   .hero-headline {
     font-size: clamp(2.125rem, 1.35rem + 3.2vw, 3.5rem);
     line-height: 1.05;
-    max-width: 14ch;
+    max-width: min(42rem, 100%);
     text-wrap: balance;
     letter-spacing: -0.035em;
-  }
-
-  @media (min-width: 1024px) {
-    .hero-headline {
-      max-width: 15ch;
-    }
   }
 
   .site-divider {

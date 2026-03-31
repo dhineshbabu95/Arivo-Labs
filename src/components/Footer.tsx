@@ -4,9 +4,6 @@ import { Container } from "@/components/Container";
 import { footer, site } from "@/content";
 
 export function Footer() {
-  const brandName = "Arivo Labs";
-  const [prefix, suffix] = footer.companyLine.split(brandName);
-
   return (
     <footer className="relative border-t border-border/60 py-16 sm:py-24">
       <div
@@ -23,13 +20,11 @@ export function Footer() {
               {footer.tagline}
             </p>
             <p className="mt-2 text-sm text-muted-foreground/95">
-              {prefix}
-              <span className="font-display font-bold tracking-tight text-amber-600 dark:text-amber-400">
-                {brandName}
-              </span>
-              {suffix}
+              {footer.companyLine}
             </p>
-            <p className="mt-2 text-xs text-muted-foreground/90">{site.location}</p>
+            <p className="mt-2 text-xs text-muted-foreground/90">
+              {site.location}
+            </p>
           </div>
           <nav className="flex flex-wrap gap-x-6 gap-y-2 sm:gap-x-10 sm:gap-y-3">
             {footer.links.map((link) => (
@@ -44,7 +39,7 @@ export function Footer() {
           </nav>
         </div>
         <p className="mt-10 border-t border-border/50 pt-6 text-sm text-muted-foreground sm:mt-14 sm:pt-8">
-          © {new Date().getFullYear()} Dhinesh Babu. All rights reserved.
+          © {new Date().getFullYear()} {site.company}. All rights reserved.
         </p>
       </Container>
     </footer>

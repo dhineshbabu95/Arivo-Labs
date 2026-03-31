@@ -32,7 +32,8 @@ export function useNotifySplashExitStart() {
  */
 export function SplashTransitionProvider({ children }: { children: ReactNode }) {
   const reduce = useReducedMotion();
-  const [revealed, setRevealed] = useState(false);
+  /** Homepage shows immediately (no intro splash). */
+  const [revealed, setRevealed] = useState(true);
 
   useEffect(() => {
     if (reduce) setRevealed(true);

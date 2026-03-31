@@ -1,9 +1,9 @@
 import { Story } from "@/components/site";
 
 export const metadata = {
-  title: "Story",
+  title: "Approach",
   description:
-    "A personal timeline from Chennai to Melbourne and beyond, and the experiences shaping how I build systems today.",
+    "How Arivo Labs moves from discovery to launch—websites, analytics, and automation for SMBs.",
 };
 
 export default function StoryPage() {

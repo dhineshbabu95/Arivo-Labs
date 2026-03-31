@@ -4,7 +4,7 @@ import { Section } from "@/components/Section";
 export const metadata = {
   title: "Services",
   description:
-    "Cloud, web, and data pipeline work for teams that want less copy-paste and fewer surprises.",
+    "Website development, analytics and dashboards, and automation for small and medium businesses.",
 };
 
 export default function ServicesPage() {
@@ -13,13 +13,15 @@ export default function ServicesPage() {
   return (
     <Section className="pt-24 sm:pt-32 lg:pt-36">
       <div className="max-w-4xl xl:max-w-5xl">
-        <p className="site-eyebrow">What I build</p>
+        <p className="site-eyebrow">Services</p>
         <h1 className="site-section-title mt-3 sm:mt-5">{services.title}</h1>
         <p className="site-body mt-6 sm:mt-8">
           {services.intro.includes(brandName) ? (
             <>
               {services.intro.split(brandName)[0]}
-              <span className="font-display font-bold tracking-tight text-amber-600 dark:text-amber-400">{brandName}</span>
+              <span className="font-display font-bold tracking-tight text-primary">
+                {brandName}
+              </span>
               {services.intro.split(brandName)[1]}
             </>
           ) : (
@@ -41,27 +43,16 @@ export default function ServicesPage() {
 
             <div className="mt-8 space-y-8 sm:mt-10 sm:space-y-9">
               <div>
-                <h3 className="text-[11px] font-semibold uppercase tracking-[0.16em] text-primary/80 dark:text-primary/75">
-                  Scope
+                <h3 className="text-[11px] font-semibold uppercase tracking-[0.16em] text-primary/85 dark:text-primary/80">
+                  What you get
                 </h3>
-                <ul className="site-body mt-4 space-y-2.5 text-foreground/90">
-                  {service.what.map((item) => (
-                    <li key={item} className="flex gap-3">
-                      <span className="text-primary/70">·</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
+                <p className="site-body mt-4 text-foreground/90">
+                  {service.description}
+                </p>
               </div>
               <div>
-                <h3 className="text-[11px] font-semibold uppercase tracking-[0.16em] text-primary/80 dark:text-primary/75">
-                  Who it&apos;s for
-                </h3>
-                <p className="site-body mt-4 text-foreground/90">{service.who}</p>
-              </div>
-              <div>
-                <h3 className="text-[11px] font-semibold uppercase tracking-[0.16em] text-primary/80 dark:text-primary/75">
-                  Result
+                <h3 className="text-[11px] font-semibold uppercase tracking-[0.16em] text-primary/85 dark:text-primary/80">
+                  Business outcome
                 </h3>
                 <p className="site-body mt-4 text-foreground/90">
                   {service.outcome}

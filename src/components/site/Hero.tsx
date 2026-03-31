@@ -11,7 +11,6 @@ import {
   useTransform,
 } from "framer-motion";
 
-import { MediaFrame } from "@/components/media/MediaFrame";
 import { Container } from "@/components/Container";
 import { Button } from "@/components/ui/button";
 import {
@@ -20,7 +19,7 @@ import {
   springReveal,
   viewHero,
 } from "@/lib/motion";
-import { home, site } from "@/content";
+import { home } from "@/content";
 import { HeroInteractiveField } from "@/components/site/HeroInteractiveField";
 import { HeroVisual } from "@/components/site/HeroVisual";
 
@@ -251,7 +250,7 @@ export function Hero() {
                   size="lg"
                   className="group h-12 w-full min-h-12 px-8 transition-[transform,box-shadow] duration-200 hover:-translate-y-px sm:h-11 sm:w-auto"
                 >
-                  <Link href="#contact">
+                  <Link href="/contact">
                     {home.hero.primaryCta}
                     <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-0.5" />
                   </Link>
@@ -262,15 +261,41 @@ export function Hero() {
                   size="lg"
                   className="h-12 w-full min-h-12 border-border/80 bg-background/40 backdrop-blur-sm transition-[transform,background-color,border-color] duration-300 hover:-translate-y-0.5 hover:bg-background/70 sm:h-11 sm:w-auto"
                 >
-                  <Link
-                    href={site.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {home.hero.secondaryCta}
-                  </Link>
+                  <Link href="/contact">{home.hero.secondaryCta}</Link>
                 </Button>
               </motion.div>
+              <motion.p
+                variants={heroItemVariants}
+                className="mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground sm:mt-8"
+              >
+                {home.hero.supportingLine}
+              </motion.p>
+              {"trustChips" in home.hero &&
+              home.hero.trustChips &&
+              home.hero.trustChips.length > 0 ? (
+                <motion.ul
+                  variants={heroItemVariants}
+                  className="mt-6 flex max-w-xl flex-wrap gap-2 sm:mt-7"
+                >
+                  {home.hero.trustChips.map((chip) => (
+                    <li key={chip}>
+                      <span className="inline-flex items-center rounded-full border border-border/80 bg-card/70 px-3 py-1 font-diagram text-xs font-medium text-muted-foreground shadow-sm">
+                        {chip}
+                      </span>
+                    </li>
+                  ))}
+                </motion.ul>
+              ) : null}
+              {"tertiaryCta" in home.hero && home.hero.tertiaryHref ? (
+                <motion.p variants={heroItemVariants} className="mt-5 sm:mt-6">
+                  <Link
+                    href={home.hero.tertiaryHref}
+                    className="font-diagram text-sm font-semibold text-brand-blue underline-offset-4 transition-colors hover:text-brand-blue/90 hover:underline"
+                  >
+                    {home.hero.tertiaryCta} →
+                  </Link>
+                </motion.p>
+              ) : null}
             </motion.div>
             <div className="min-w-0 lg:col-span-1 lg:col-start-3 lg:row-start-1">
               <HeroVisual />
@@ -283,7 +308,6 @@ export function Hero() {
 }
 
 function HeroCopy() {
-  const { visual } = home.hero;
   return (
     <div className="grid gap-10 lg:grid-cols-[auto_minmax(0,1fr)_minmax(300px,44%)] lg:items-center lg:gap-x-10 xl:gap-x-14">
       <div
@@ -304,7 +328,7 @@ function HeroCopy() {
             size="lg"
             className="group h-12 w-full min-h-12 px-8 transition-[transform,box-shadow] duration-200 hover:-translate-y-px sm:h-11 sm:w-auto"
           >
-            <Link href="#contact">
+            <Link href="/contact">
               {home.hero.primaryCta}
               <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-0.5" />
             </Link>
@@ -315,25 +339,36 @@ function HeroCopy() {
             size="lg"
             className="h-12 w-full min-h-12 border-border/80 bg-background/40 backdrop-blur-sm transition-[transform,background-color,border-color] duration-300 hover:-translate-y-0.5 hover:bg-background/70 sm:h-11 sm:w-auto"
           >
-            <Link
-              href={site.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {home.hero.secondaryCta}
-            </Link>
+            <Link href="/contact">{home.hero.secondaryCta}</Link>
           </Button>
         </div>
+        <p className="mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground sm:mt-8">
+          {home.hero.supportingLine}
+        </p>
+        {home.hero.trustChips && home.hero.trustChips.length > 0 ? (
+          <ul className="mt-6 flex max-w-xl flex-wrap gap-2 sm:mt-7">
+            {home.hero.trustChips.map((chip) => (
+              <li key={chip}>
+                <span className="inline-flex items-center rounded-full border border-border/80 bg-card/70 px-3 py-1 font-diagram text-xs font-medium text-muted-foreground shadow-sm">
+                  {chip}
+                </span>
+              </li>
+            ))}
+          </ul>
+        ) : null}
+        {home.hero.tertiaryHref ? (
+          <p className="mt-5 sm:mt-6">
+            <Link
+              href={home.hero.tertiaryHref}
+              className="font-diagram text-sm font-semibold text-brand-blue underline-offset-4 hover:underline"
+            >
+              {home.hero.tertiaryCta} →
+            </Link>
+          </p>
+        ) : null}
       </div>
-      <div className="hidden min-w-0 lg:col-start-3 lg:block">
-        <MediaFrame
-          src={visual.src}
-          alt={visual.alt}
-          slotLabel="Add: _source/hero-visual.* → npm run images:resize (1200×900). See IMAGE_SLOTS.md."
-          aspectClass="aspect-[4/3]"
-          sizes="(max-width: 1024px) 90vw, (max-width: 1280px) 400px, 512px"
-          priority
-        />
+      <div className="min-w-0 lg:col-span-1 lg:col-start-3 lg:row-start-1">
+        <HeroVisual />
       </div>
     </div>
   );

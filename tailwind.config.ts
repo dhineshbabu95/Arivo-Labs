@@ -10,8 +10,9 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-dm-sans)", "system-ui", "sans-serif"],
-        display: ["var(--font-syne)", "system-ui", "sans-serif"],
+        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        display: ["var(--font-sora)", "system-ui", "sans-serif"],
+        diagram: ["var(--font-ibm-plex)", "var(--font-inter)", "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -51,6 +52,11 @@ const config: Config = {
         success: {
           DEFAULT: "hsl(var(--success))",
           foreground: "hsl(var(--success-foreground))",
+        },
+        brand: {
+          red: "hsl(var(--brand-red) / <alpha-value>)",
+          green: "hsl(var(--brand-green) / <alpha-value>)",
+          blue: "hsl(var(--brand-blue) / <alpha-value>)",
         },
         /* Legacy aliases used in older pages (maps to same tokens) */
         text: "hsl(var(--foreground))",

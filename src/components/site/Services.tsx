@@ -1,6 +1,7 @@
 import { Container } from "@/components/Container";
 import { Reveal, RevealItem, RevealStagger } from "@/components/Reveal";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { ServiceCardVisual } from "@/components/visuals/ServiceCardVisual";
 import { home, services } from "@/content";
 
 export function Services() {
@@ -32,20 +33,13 @@ export function Services() {
                   <CardTitle className="font-sans text-lg font-semibold text-foreground sm:text-xl">
                     {s.title}
                   </CardTitle>
-                  <p className="text-sm leading-snug text-muted-foreground">
-                    {s.who}
-                  </p>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-2.5 text-[0.9375rem] leading-relaxed text-muted-foreground sm:space-y-3 sm:text-sm">
-                    {s.what.map((b) => (
-                      <li key={b} className="flex gap-3">
-                        <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-primary/80" />
-                        <span>{b}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <p className="mt-6 border-t border-border/50 pt-5 text-sm leading-relaxed text-foreground/90">
+                  <ServiceCardVisual id={s.id as "websites" | "analytics" | "automation"} />
+                  <p className="mt-4 text-[0.9375rem] leading-relaxed text-muted-foreground sm:text-[0.9375rem]">
+                    {s.description}
+                  </p>
+                  <p className="mt-6 border-t border-border/50 pt-5 text-sm font-medium leading-relaxed text-foreground/90">
                     {s.outcome}
                   </p>
                 </CardContent>

@@ -3,16 +3,16 @@ import { Section } from "@/components/Section";
 import { Card } from "@/components/Card";
 
 export const metadata = {
-  title: "Projects",
+  title: "Work",
   description:
-    "A few systems I built to make releases, dashboards, and data workflows feel calmer.",
+    "Case studies: releases, dashboards, and data workflows with calmer operations.",
 };
 
 export default function WorkPage() {
   return (
     <Section className="pt-24 sm:pt-32 lg:pt-36">
       <div className="max-w-4xl xl:max-w-5xl">
-        <p className="site-eyebrow">Projects</p>
+        <p className="site-eyebrow">Work</p>
         <h1 className="site-section-title mt-3 sm:mt-5">{work.title}</h1>
         <p className="site-body mt-6 sm:mt-8">{work.intro}</p>
       </div>
