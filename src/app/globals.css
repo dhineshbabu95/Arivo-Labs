@@ -5,7 +5,7 @@
 /*
  * Samurai Jack–inspired palette (Arivo Labs)
  * Dark base #0B0B0F / #1A1A22 · Light surfaces #F5F5F5 / #CFCFCF
- * Orange #FF9F1C · Red #FF3B3B · Green #00FF9C · Blue #3A86FF
+ * Orange #FF9F1C · Blue #3A86FF · Green #00FF9C
  */
 
 /* -------------------------------------------------------------------------- */
@@ -22,8 +22,8 @@
     --popover: 0 0% 100%;
     --popover-foreground: 240 15% 5%;
 
-    --primary: 32 100% 50%;
-    --primary-bright: 32 100% 55%;
+    --primary: 35 100% 55%;
+    --primary-bright: 35 100% 60%;
     --primary-foreground: 240 15% 5%;
 
     --secondary: 240 8% 92%;
@@ -32,13 +32,13 @@
     --muted: 0 0% 96%;
     --muted-foreground: 240 4% 38%;
 
-    --accent: 32 100% 48%;
+    --accent: 35 100% 55%;
     --accent-foreground: 240 15% 5%;
 
     --destructive: 0 100% 58%;
     --destructive-foreground: 0 0% 100%;
 
-    --success: 158 100% 42%;
+    --success: 157 100% 50%;
     --success-foreground: 240 15% 5%;
 
     --border: 240 6% 82%;
@@ -47,12 +47,12 @@
 
     --radius: 0.75rem;
 
-    --zone-build-tint: 32 100% 50%;
+    --zone-build-tint: 35 100% 55%;
     --zone-beyond-tint: 240 4% 38%;
 
     --brand-red: 0 100% 62%;
-    --brand-green: 158 100% 50%;
-    --brand-blue: 217 100% 62%;
+    --brand-green: 157 100% 50%;
+    --brand-blue: 217 100% 61%;
 
     --card-shadow: 0 1px 0 hsl(240 15% 5% / 0.05),
       0 1px 3px hsl(240 15% 5% / 0.06);
@@ -76,8 +76,8 @@
     --popover: 240 12% 12%;
     --popover-foreground: 0 0% 96%;
 
-    --primary: 32 100% 55%;
-    --primary-bright: 32 100% 60%;
+    --primary: 35 100% 55%;
+    --primary-bright: 35 100% 60%;
     --primary-foreground: 240 15% 5%;
 
     --secondary: 240 10% 16%;
@@ -86,25 +86,25 @@
     --muted: 240 10% 18%;
     --muted-foreground: 0 0% 81%;
 
-    --accent: 32 100% 55%;
+    --accent: 35 100% 55%;
     --accent-foreground: 240 15% 5%;
 
     --destructive: 0 100% 62%;
     --destructive-foreground: 0 0% 100%;
 
-    --success: 158 100% 50%;
+    --success: 157 100% 50%;
     --success-foreground: 240 15% 5%;
 
     --border: 240 10% 20%;
     --input: 240 10% 20%;
     --ring: 217 100% 62%;
 
-    --zone-build-tint: 32 100% 55%;
+    --zone-build-tint: 35 100% 55%;
     --zone-beyond-tint: 0 0% 81%;
 
     --brand-red: 0 100% 62%;
-    --brand-green: 158 100% 50%;
-    --brand-blue: 217 100% 62%;
+    --brand-green: 157 100% 50%;
+    --brand-blue: 217 100% 61%;
 
     --card-shadow: 0 1px 0 hsl(0 0% 100% / 0.04),
       0 2px 12px hsl(0 0% 0% / 0.35);
