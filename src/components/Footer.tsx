@@ -4,6 +4,9 @@ import { Container } from "@/components/Container";
 import { footer, site } from "@/content";
 
 export function Footer() {
+  const brandName = "Arivo Labs";
+  const [prefix, suffix] = footer.companyLine.split(brandName);
+
   return (
     <footer className="relative border-t border-border/60 py-16 sm:py-24">
       <div
@@ -20,7 +23,11 @@ export function Footer() {
               {footer.tagline}
             </p>
             <p className="mt-2 text-sm text-muted-foreground/95">
-              {footer.companyLine}
+              {prefix}
+              <span className="font-display font-bold tracking-tight text-amber-600 dark:text-amber-400">
+                {brandName}
+              </span>
+              {suffix}
             </p>
             <p className="mt-2 text-xs text-muted-foreground/90">{site.location}</p>
           </div>

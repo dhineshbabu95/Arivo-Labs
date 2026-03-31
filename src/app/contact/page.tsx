@@ -9,6 +9,7 @@ const inputStyles =
   "mt-2 block min-h-12 w-full rounded-lg border border-border/70 bg-card/80 px-4 py-3 text-base text-foreground placeholder:text-muted-foreground/60 transition-all duration-200 hover:border-border focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 sm:min-h-0 sm:text-sm";
 
 export default function ContactPage() {
+  const brandName = "Arivo Labs";
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">(
     "idle"
   );
@@ -45,7 +46,17 @@ export default function ContactPage() {
       <div className="mx-auto w-full max-w-xl min-w-0">
         <p className="site-eyebrow">Contact</p>
         <h1 className="site-section-title mt-3 sm:mt-5">{contact.title}</h1>
-        <p className="site-body mt-6 sm:mt-8">{contact.intro}</p>
+        <p className="site-body mt-6 sm:mt-8">
+          {contact.intro.includes(brandName) ? (
+            <>
+              {contact.intro.split(brandName)[0]}
+              <span className="font-display font-bold tracking-tight text-amber-600 dark:text-amber-400">{brandName}</span>
+              {contact.intro.split(brandName)[1]}
+            </>
+          ) : (
+            contact.intro
+          )}
+        </p>
 
         <form onSubmit={handleSubmit} className="mt-10 space-y-5 sm:mt-14 sm:space-y-6">
           <div>
@@ -134,37 +145,7 @@ export default function ContactPage() {
         </form>
 
         <div className="mt-12 space-y-6 rounded-lg border border-border/70 bg-card/80 p-6 shadow-sm sm:mt-16 sm:p-8">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-wider text-primary/85 dark:text-primary/75">
-              {contact.addressLabel}
-            </p>
-            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              {site.address.lines.map((line) => (
-                <span key={line} className="block">
-                  {line}
-                </span>
-              ))}
-            </p>
-          </div>
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-wider text-primary/85 dark:text-primary/75">
-              {contact.phoneLabel}
-            </p>
-            <div className="mt-2 flex flex-col gap-2 text-sm">
-              <a
-                href={`tel:${site.phone.au.tel}`}
-                className="text-primary transition-colors hover:text-primary/80"
-              >
-                {site.phone.au.display} <span className="text-muted-foreground">(AU)</span>
-              </a>
-              <a
-                href={`tel:${site.phone.in.tel}`}
-                className="text-primary transition-colors hover:text-primary/80"
-              >
-                {site.phone.in.display} <span className="text-muted-foreground">(IN)</span>
-              </a>
-            </div>
-          </div>
+          <p className="text-sm text-muted-foreground">{site.location}</p>
           <p className="text-sm text-muted-foreground">{contact.responseTime}</p>
           <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Button

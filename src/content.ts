@@ -9,14 +9,7 @@ export const site = {
   url: "https://www.dhineshbabu.com",
   email: "dhinesh.babu2511@gmail.com",
   linkedin: "https://www.linkedin.com/in/dhineshbabudata/",
-  phone: {
-    au: { tel: "+61421597288", display: "+61 421 597 288" },
-    in: { tel: "+918220359911", display: "+91 82203 59911" },
-  },
   location: "Sydney, NSW, Australia",
-  address: {
-    lines: ["200 Kissing Point Road", "Dundas, NSW 2117", "Australia"],
-  },
 };
 
 // --------------------------------------
@@ -119,7 +112,7 @@ export const about = {
 export const services = {
   title: "Services",
   intro:
-    "If your team does the same manual steps every week, I can help automate them. You keep the interesting problems.",
+    "If your team does the same manual steps every week, I can help automate them. I offer these services through Arivo Labs, while you keep the interesting problems.",
   items: [
     {
       id: "cloud",
@@ -178,8 +171,6 @@ export const contact = {
   responseTime: "Usually within a day.",
   linkedinLabel: "LinkedIn",
   emailLabel: "Email",
-  phoneLabel: "Call / WhatsApp",
-  addressLabel: "Location",
 };
 
 // --------------------------------------

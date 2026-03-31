@@ -8,12 +8,24 @@ export const metadata = {
 };
 
 export default function ServicesPage() {
+  const brandName = "Arivo Labs";
+
   return (
     <Section className="pt-24 sm:pt-32 lg:pt-36">
       <div className="max-w-4xl xl:max-w-5xl">
         <p className="site-eyebrow">What I build</p>
         <h1 className="site-section-title mt-3 sm:mt-5">{services.title}</h1>
-        <p className="site-body mt-6 sm:mt-8">{services.intro}</p>
+        <p className="site-body mt-6 sm:mt-8">
+          {services.intro.includes(brandName) ? (
+            <>
+              {services.intro.split(brandName)[0]}
+              <span className="font-display font-bold tracking-tight text-amber-600 dark:text-amber-400">{brandName}</span>
+              {services.intro.split(brandName)[1]}
+            </>
+          ) : (
+            services.intro
+          )}
+        </p>
       </div>
 
       <div className="mt-12 grid gap-4 sm:mt-20 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
