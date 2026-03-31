@@ -11,6 +11,9 @@ import {
 } from "@/components/SplashTransitionLayout";
 import { site } from "@/content";
 
+/** Bump when replacing tab icons so browsers (especially Safari) refetch instead of stale cache. */
+const ICON_QUERY = "?v=arivo2";
+
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -70,20 +73,24 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
+      { url: `/favicon.ico${ICON_QUERY}`, sizes: "any" },
       {
-        url: "/brand/arivo-labs-icon-dark.svg",
+        url: `/icon-32x32.png${ICON_QUERY}`,
+        type: "image/png",
+        sizes: "32x32",
+      },
+      {
+        url: `/brand/arivo-labs-icon-dark.svg${ICON_QUERY}`,
         type: "image/svg+xml",
         media: "(prefers-color-scheme: light)",
       },
       {
-        url: "/brand/arivo-labs-icon-light.svg",
+        url: `/brand/arivo-labs-icon-light.svg${ICON_QUERY}`,
         type: "image/svg+xml",
         media: "(prefers-color-scheme: dark)",
       },
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/icon-32x32.png", type: "image/png", sizes: "32x32" },
     ],
-    apple: "/apple-touch-icon.png",
+    apple: `/apple-touch-icon.png${ICON_QUERY}`,
   },
   metadataBase: new URL(site.url),
 };
