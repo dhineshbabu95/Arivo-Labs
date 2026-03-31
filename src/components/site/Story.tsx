@@ -111,12 +111,9 @@ function StoryRow({
   index: number;
 }) {
   const imageOnRight = index % 2 === 1;
-  const isMelbourne =
-    step.phase === "Melbourne" && step.title === "A slower chapter";
-  const isAlexa = step.phase === "AI" && step.title === "Alexa moment";
   const isStudy =
-    step.phase === "Study" && step.title === "Engineering, then data";
-  const isSydney = step.phase === "Sydney" && step.title === "Fresh start";
+    step.phase === "Melbourne" && step.title === "Engineering, then data";
+  const isSydney = step.phase === "New chapter" && step.title === "Fresh start";
   const isGrowingUp = step.phase === "Growing up" && step.title === "Curious kid";
   const isToday = step.phase === "Today" && step.title === "What I focus on";
   const isPath = step.phase === "Path" && step.title === "Still building";
@@ -145,7 +142,7 @@ function StoryRow({
             alt={step.posterAlt}
             slotLabel={`Drop image: /images/story/${slugForStoryPoster(step)}.webp — see IMAGE_SLOTS.md`}
             aspectClass={
-              isMelbourne || isAlexa || isStudy || isSydney || isGrowingUp
+              isStudy || isSydney || isGrowingUp
                 || isToday
                 || isPath
                 || isWork
@@ -154,26 +151,22 @@ function StoryRow({
             }
             fit="contain"
             imageWidth={
-              isMelbourne
-                ? 576
-                : isAlexa
+              isStudy
+                ? 668
+                : isSydney
                   ? 768
-                  : isStudy
-                    ? 668
-                    : isSydney
-                      ? 768
-                      : isGrowingUp
-                        ? 576
-                        : isToday
-                          ? 682
-                          : isPath
-                            ? 682
-                            : isWork
-                              ? 768
-                      : undefined
+                  : isGrowingUp
+                    ? 576
+                    : isToday
+                      ? 682
+                      : isPath
+                        ? 682
+                        : isWork
+                          ? 768
+                    : undefined
             }
             imageHeight={
-              isMelbourne || isAlexa || isStudy || isSydney || isGrowingUp || isToday || isPath || isWork
+              isStudy || isSydney || isGrowingUp || isToday || isPath || isWork
                 ? 1024
                 : undefined
             }
@@ -221,10 +214,8 @@ function slugForStoryPoster(
   const key = `${step.phase}-${step.title}`;
   const map: Record<string, string> = {
     "Growing up-Curious kid": "growing-up",
-    "Study-Engineering, then data": "study-data",
-    "AI-Alexa moment": "alexa-moment",
-    "Melbourne-A slower chapter": "melbourne",
-    "Sydney-Fresh start": "sydney",
+    "Melbourne-Engineering, then data": "study-data",
+    "New chapter-Fresh start": "sydney",
     "Work-Pipelines and platforms": "work-pipelines",
     "Path-Still building": "path-building",
     "Today-What I focus on": "today-focus",

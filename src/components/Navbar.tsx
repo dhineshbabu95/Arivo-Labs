@@ -8,13 +8,12 @@ import { Container } from "@/components/Container";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { home } from "@/content";
+import { home, site } from "@/content";
 
 const NAV = [
   { href: "/#about", label: "About" },
   { href: "/#projects", label: "Projects" },
   { href: "/#services", label: "Services" },
-  { href: "/#story", label: "Story" },
   { href: "/#beyond", label: "Beyond work" },
   { href: "/#contact", label: "Contact" },
 ];
@@ -30,7 +29,7 @@ export function Navbar() {
             href="/"
             className="font-display text-base font-semibold tracking-tight text-foreground transition-colors duration-200 hover:text-primary sm:text-lg"
           >
-            Dhinesh Babu
+            {site.name}
           </Link>
 
           <div className="flex items-center gap-0.5">

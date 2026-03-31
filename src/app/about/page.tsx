@@ -6,7 +6,7 @@ import { ProfilePortrait } from "@/components/ProfilePortrait";
 export const metadata = {
   title: "About",
   description:
-    "Chennai to Australia, engineering to data work, and why I like building systems that keep running.",
+    "About Arivo Labs - a systems-focused technology studio building cloud, data, and AI platforms for growing businesses.",
 };
 
 export default function AboutPage() {

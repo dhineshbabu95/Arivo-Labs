@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     template: `%s | ${site.name}`,
   },
   description:
-    "Dhinesh Babu builds cloud, data, and web systems that keep running. Less manual work, fewer surprises.",
+    "Arivo Labs builds cloud, data, and AI systems for growing businesses. Practical architecture, reliable delivery, and long-term maintainability.",
   keywords: [
     "cloud",
     "data pipelines",
@@ -45,13 +45,13 @@ export const metadata: Metadata = {
     siteName: site.name,
     title: `${site.name} | ${site.tagline}`,
     description:
-      "Cloud, data pipelines, and web tools built to last. Dhinesh Babu, engineer in Australia.",
+      "Arivo Labs delivers cloud, data, and automation systems that help businesses scale with confidence.",
   },
   twitter: {
     card: "summary_large_image",
     title: `${site.name} | ${site.tagline}`,
     description:
-      "Cloud, data, and automation. Personal site of Dhinesh Babu.",
+      "Arivo Labs: cloud, data, and AI systems for business growth.",
   },
   icons: {
     icon: [

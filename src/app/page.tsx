@@ -6,7 +6,6 @@ import {
   Hero,
   Projects,
   Services,
-  Story,
 } from "@/components/site";
 
 export default function HomePage() {
@@ -25,7 +24,6 @@ export default function HomePage() {
       <div className="site-zone-bridge site-zone-bridge-beyond" aria-hidden />
 
       <SiteZone variant="beyond">
-        <Story />
         <BeyondWork />
       </SiteZone>
 

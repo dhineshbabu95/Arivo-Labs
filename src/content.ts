@@ -3,9 +3,9 @@
  */
 
 export const site = {
-  name: "Dhinesh Babu",
+  name: "Arivo Labs",
   company: "Arivo Labs",
-  tagline: "Cloud, data & web systems",
+  tagline: "Cloud, Data & AI Systems for Growing Businesses",
   url: "https://www.dhineshbabu.com",
   email: "dhinesh.babu2511@gmail.com",
   linkedin: "https://www.linkedin.com/in/dhineshbabudata/",
@@ -90,18 +90,14 @@ export const work = {
 // --------------------------------------
 
 export const about = {
-  title: "Dhinesh Babu",
+  title: "About Arivo Labs",
   portrait: "/images/profile.png",
-  portraitAlt:
-    "Dhinesh Babu smiling, wearing a black polo shirt against a neutral gray background.",
+  portraitAlt: "Arivo Labs brand mark",
   content: [
-    "I grew up in Chennai in a middle-class home — nothing fancy, plenty of heart. My dad worked in the South Indian music scene; my mum kept our home running. We didn't have spare money for everything, but we had room to ask questions and try things.",
-    "I was the kid who took things apart to see how they fit back together. Engineering in Chennai came next, then a Master's in Data Science at La Trobe in Melbourne — a big step I'm still grateful my family backed.",
-    "Using products like Alexa made AI feel real to me. I wanted to build things people could use, not only read papers about them.",
-    "Melbourne included a long lockdown and a slower season than I expected. Looking back, it pushed me to build better habits, look after myself properly, and choose my next move with more care. Sydney has been that next chapter — lighter, busier, and full of things I chose on purpose.",
-    "These days I train Brazilian Jiu-Jitsu and CrossFit — simple anchors that keep me steady. Shipping a real project end to end again reminded me how much I love the craft of building.",
-    "Work has taken me through a few different worlds — big tech, telco, measurement, agency. The thread stays the same: cloud, data, automation, and systems that still work the week after you ship.",
-    "I run Arivo Labs, where I help teams design and ship practical cloud, web, and data systems with clarity and long-term maintainability.",
+    "Arivo Labs is a systems-focused technology studio helping businesses modernize how they build, ship, and operate software.",
+    "We work across cloud engineering, automation, data platforms, and digital product infrastructure to remove operational bottlenecks and improve delivery confidence.",
+    "Our approach is practical and outcome-driven: understand the business constraint, design clean architecture, and deliver solutions that stay maintainable as the business scales.",
+    "Based in Sydney, we partner with teams across Australia and globally on high-impact platform and automation initiatives.",
   ],
 };
 
@@ -112,7 +108,7 @@ export const about = {
 export const services = {
   title: "Services",
   intro:
-    "If your team does the same manual steps every week, I can help automate them. I offer these services through Arivo Labs, while you keep the interesting problems.",
+    "Arivo Labs provides these services to help product and operations teams move faster with reliable cloud, data, and automation systems.",
   items: [
     {
       id: "cloud",
@@ -160,7 +156,7 @@ export const services = {
 export const contact = {
   title: "Contact",
   intro:
-    "If you want to tighten a workflow, automate something, or talk through an idea, send a note. I also take on selected consulting projects through Arivo Labs.",
+    "Tell us what you're building or where you're blocked. Arivo Labs responds with a clear technical direction and practical next steps.",
   form: {
     name: "Name",
     email: "Email",
@@ -179,12 +175,12 @@ export const contact = {
 
 export const home = {
   hero: {
-    eyebrow: "Data, AI & automation",
-    headline: "I build systems that handle the repeat work.",
+    eyebrow: "Cloud, Data & AI Engineering",
+    headline: "Arivo Labs builds reliable systems for ambitious teams.",
     subheadline:
-      "Cloud, data pipelines, and small web tools — the kind that keep helping after the handover. I enjoy work that holds up in the real world.",
-    primaryCta: "Say hello",
-    secondaryCta: "LinkedIn",
+      "We design and deliver cloud platforms, automated data workflows, and modern web systems that scale with your business.",
+    primaryCta: "Book a discovery call",
+    secondaryCta: "Connect on LinkedIn",
     /** Right column on large screens — set src when asset exists (see IMAGE_SLOTS.md) */
     visual: {
       src: null as string | null,
@@ -204,69 +200,28 @@ export const home = {
      */
     milestones: [
       {
-        phase: "Growing up",
-        title: "Curious kid",
-        text: "Chennai, humble home — I took things apart to learn how they worked.",
-        /** Chapter poster — wide “movie strip” above card; null = labeled placeholder */
-        posterImage: "/images/story/growing-up.webp",
-        posterAlt:
-          "Growing up in Chennai — childhood, home, or curiosity / tinkering mood.",
-      },
-      {
-        phase: "Study",
-        title: "Engineering, then data",
-        text: "Engineering in Chennai, then a Master's in Data Science at La Trobe in Melbourne.",
-        posterImage: "/images/story/study-data.webp",
-        posterAlt:
-          "Study chapter — university campus, engineering, or data science learning.",
-      },
-      {
-        phase: "AI",
-        title: "Alexa moment",
-        text: "Voice assistants made AI feel tangible. I wanted to build, not only study.",
-        posterImage: "/images/story/alexa-moment.webp",
-        posterAlt:
-          "Voice assistant or hands-free tech — tangible AI, not generic robot stock.",
-      },
-      {
-        phase: "Melbourne",
-        title: "A slower chapter",
-        text: "Lockdowns and a quieter life taught me patience and better habits — useful lessons I took with me.",
-        posterImage: "/images/story/melbourne-original.png",
-        posterAlt:
-          "Melbourne — quiet city mood, coffee, or reflective slower chapter.",
-      },
-      {
-        phase: "Sydney",
-        title: "Fresh start",
-        text: "Moved to Sydney, chose training and routine on purpose: BJJ, CrossFit, and a clearer head.",
-        posterImage: "/images/story/sydney.webp",
-        posterAlt:
-          "Sydney harbour or city energy — fresh start, training, routine.",
-      },
-      {
-        phase: "Work",
-        title: "Pipelines and platforms",
-        text: "Telco and measurement work in Melbourne and Sydney — lots of AWS, automation, and making jobs repeatable.",
+        phase: "Foundation",
+        title: "Why Arivo Labs started",
+        text: "Arivo Labs began to solve a recurring problem: growing teams needed reliable systems, but not added operational complexity.",
         posterImage: "/images/story/work-pipelines.webp",
         posterAlt:
-          "Cloud, pipelines, or platforms — telco / measurement / AWS automation mood.",
+          "Cloud and platform engineering foundations for startup and growth teams.",
       },
       {
-        phase: "Path",
-        title: "Still building",
-        text: "Sydney, agency-side work — still deep in data, automation, and shipping things that last.",
+        phase: "Delivery",
+        title: "Execution with ownership",
+        text: "We partner closely with product and operations teams to design, build, and ship systems that teams can confidently run after handover.",
         posterImage: "/images/story/path-building.webp",
         posterAlt:
-          "Agency or shipping work — collaboration, shipping, data and automation.",
+          "Collaborative delivery model focused on reliability and maintainability.",
       },
       {
         phase: "Today",
-        title: "What I focus on",
-        text: "Reliable systems and automation so teams get time back for the work only people can do.",
+        title: "What we focus on",
+        text: "Arivo Labs focuses on cloud, data, and AI systems that reduce manual effort and create compounding business value.",
         posterImage: "/images/story/today-focus.webp",
         posterAlt:
-          "Today — reliable systems, automation, teams getting time back.",
+          "Modern cloud, data, and AI stack supporting business growth.",
       },
     ],
   },
@@ -275,8 +230,8 @@ export const home = {
     paragraphs: about.content,
   },
   projects: {
-    title: "Projects",
-    heading: "Work that made the week a bit easier.",
+    title: "Case Studies",
+    heading: "Systems delivered for real business outcomes.",
     intro:
       "Three examples. Each one was about less manual effort and fewer last-minute surprises.",
     labels: {
@@ -287,20 +242,20 @@ export const home = {
   },
   services: {
     title: "Services",
-    heading: "Cloud, data, and web — built to last.",
+    heading: "Cloud, data, and automation services by Arivo Labs.",
     intro: services.intro,
   },
   beyondWork: {
-    title: "Beyond work",
-    heading: "Training keeps me honest.",
+    title: "Why Arivo Labs",
+    heading: "Engineering clarity, ownership, and long-term reliability.",
     visual: {
       src: "/images/home/beyond-work-original.png",
       alt: "Optional — training, gym, or life outside the desk.",
     },
     paragraphs: [
-      "Outside of work I spend time on the mat and in the gym — Brazilian Jiu-Jitsu and CrossFit. They're a simple way to show up for myself, the same way I try to show up for a team at work.",
-      "Jiu-jitsu is patience and control under pressure. CrossFit is doing the work even when you're not in the mood — both translate back to how I like to build.",
-      "I'm at my best when something ships, people actually use it, and the docs are clear enough for the next person to improve it.",
+      "We focus on building systems that your team can confidently run after handover, not fragile setups that depend on external support forever.",
+      "Every engagement balances speed and maintainability so you can ship quickly today without creating operational pain tomorrow.",
+      "From architecture to delivery, we prioritize measurable business outcomes, clear documentation, and sustainable execution.",
     ],
   },
   contact: {
@@ -361,7 +316,7 @@ export const privacy = {
 export const nav = {
   links: [
     { href: "/", label: "Home" },
-    { href: "/work", label: "Projects" },
+    { href: "/work", label: "Work" },
     { href: "/about", label: "About" },
     { href: "/services", label: "Services" },
     { href: "/contact", label: "Contact" },
@@ -374,7 +329,7 @@ export const nav = {
 
 export const footer = {
   tagline:
-    "Cloud, data, AI, and internal tools — built to stay useful after launch.",
+    "Cloud, data, and AI systems engineered for business growth.",
   companyLine: "Founder, Arivo Labs",
   links: [
     { href: "/services", label: "Services" },
