@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
+import { BrandLogo } from "@/components/BrandLogo";
 import { Container } from "@/components/Container";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { Button } from "@/components/ui/button";
@@ -26,34 +27,29 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/90 shadow-[var(--nav-shadow)] backdrop-blur-xl supports-[backdrop-filter]:bg-background/75 dark:border-border/50 dark:bg-background/85">
       <Container>
-        <nav className="flex min-h-[3.5rem] items-center justify-between gap-2 py-2 sm:min-h-0 sm:h-[4.25rem] sm:py-0">
+        <nav className="flex h-[4.25rem] items-center justify-between gap-3">
           <Link
             href="/"
-            className="flex shrink-0 items-center outline-none transition-opacity hover:opacity-90 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+            className="flex shrink-0 items-center py-1 outline-none transition-opacity hover:opacity-90 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
           >
             <span className="sr-only">{site.name}</span>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/brand/arivo-labs-horizontal-light.svg"
-              alt=""
-              aria-hidden
-              className="h-8 w-auto dark:hidden sm:h-9"
-              width={200}
-              height={44}
+            <BrandLogo variant="icon" size="md" className="md:hidden" priority />
+            <BrandLogo
+              variant="horizontal"
+              size="md"
+              className="hidden md:inline-flex 2xl:hidden"
+              priority
             />
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/brand/arivo-labs-horizontal-dark.svg"
-              alt=""
-              aria-hidden
-              className="hidden h-8 w-auto dark:block sm:h-9"
-              width={200}
-              height={44}
+            <BrandLogo
+              variant="horizontal"
+              size="lg"
+              className="hidden 2xl:inline-flex"
+              priority
             />
           </Link>
 
-          <div className="flex items-center gap-0.5">
-            <div className="hidden items-center gap-0.5 xl:flex">
+          <div className="flex min-w-0 flex-1 items-center justify-end gap-1">
+            <div className="hidden items-center gap-0.5 2xl:flex">
               {NAV.map((item) => (
                 <Button
                   key={item.href}
@@ -61,7 +57,7 @@ export function Navbar() {
                   asChild
                   className="h-9 overflow-visible px-2 hover:bg-transparent"
                 >
-                  <Link href={item.href} className="nav-link text-sm">
+                  <Link href={item.href} className="nav-link whitespace-nowrap text-sm">
                     {item.label}
                   </Link>
                 </Button>
@@ -72,7 +68,7 @@ export function Navbar() {
               </Button>
             </div>
 
-            <div className="flex items-center gap-1 xl:hidden">
+            <div className="flex items-center gap-1 2xl:hidden">
               <ThemeToggle />
               <Button
                 type="button"
@@ -90,11 +86,15 @@ export function Navbar() {
 
         <div
           className={cn(
-            "border-t border-border/60 bg-muted/30 xl:hidden dark:bg-muted/20",
+            "border-t border-border/60 bg-muted/30 2xl:hidden dark:bg-muted/20",
             open ? "block" : "hidden"
           )}
         >
           <div className="flex flex-col gap-0.5 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
+            <div className="mb-2 flex items-center px-3">
+              <BrandLogo variant="icon" size="sm" />
+              <span className="ml-2 text-sm font-medium text-foreground">{site.name}</span>
+            </div>
             {NAV.map((item) => (
               <Button
                 key={item.href}

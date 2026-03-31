@@ -70,7 +70,16 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
+      {
+        url: "/brand/arivo-labs-icon-dark.svg",
+        type: "image/svg+xml",
+        media: "(prefers-color-scheme: light)",
+      },
+      {
+        url: "/brand/arivo-labs-icon-light.svg",
+        type: "image/svg+xml",
+        media: "(prefers-color-scheme: dark)",
+      },
       { url: "/favicon.ico", sizes: "any" },
       { url: "/icon-32x32.png", type: "image/png", sizes: "32x32" },
     ],

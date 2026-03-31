@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { BrandLogo } from "@/components/BrandLogo";
 import { Container } from "@/components/Container";
 import { footer, site } from "@/content";
 
@@ -18,24 +19,7 @@ export function Footer() {
               className="inline-flex outline-none transition-opacity hover:opacity-90 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
             >
               <span className="sr-only">{site.name}</span>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/brand/arivo-labs-horizontal-light.svg"
-                alt=""
-                aria-hidden
-                className="h-9 w-auto dark:hidden"
-                width={200}
-                height={44}
-              />
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/brand/arivo-labs-horizontal-dark.svg"
-                alt=""
-                aria-hidden
-                className="hidden h-9 w-auto dark:block"
-                width={200}
-                height={44}
-              />
+              <BrandLogo variant="horizontal" size="md" />
             </Link>
             <p className="mt-3 max-w-sm text-sm leading-relaxed text-muted-foreground">
               {footer.tagline}
