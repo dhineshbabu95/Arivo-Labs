@@ -174,7 +174,7 @@ export function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="hero-section relative isolate min-h-[min(88vh,52rem)] overflow-hidden pt-28 pb-24 sm:min-h-0 sm:pb-32 sm:pt-36 lg:pb-40 lg:pt-44"
+      className="hero-section relative isolate min-h-[min(88vh,52rem)] w-full overflow-x-clip pt-28 pb-24 sm:min-h-0 sm:pb-32 sm:pt-36 lg:pb-40 lg:pt-44"
       style={
         {
           "--hero-x": "0",
@@ -184,7 +184,7 @@ export function Hero() {
       onPointerMove={onPointerMove}
       onPointerLeave={onPointerLeave}
     >
-      <div className="pointer-events-none absolute inset-0 isolate overflow-hidden">
+      <div className="pointer-events-none absolute inset-0 isolate overflow-x-clip">
         {!reduce ? <HeroInteractiveField /> : null}
         <motion.div
           className="hero-aurora absolute -inset-[22%] opacity-100"
@@ -203,12 +203,12 @@ export function Hero() {
         />
       </div>
 
-      <Container className="relative z-10 flex min-h-[min(72vh,44rem)] flex-col justify-center sm:min-h-0">
+      <Container className="relative z-10 flex min-h-[min(72vh,44rem)] min-w-0 flex-col justify-center sm:min-h-0">
         {reduce ? (
           <HeroCopy />
         ) : (
           <motion.div
-            className="grid gap-10 lg:grid-cols-[auto_minmax(0,1fr)_minmax(300px,44%)] lg:items-center lg:gap-x-10 xl:gap-x-14"
+            className="grid w-full min-w-0 max-w-full grid-cols-1 gap-10 lg:grid-cols-[auto_minmax(0,1fr)_minmax(0,28rem)] lg:items-start lg:gap-x-8 xl:gap-x-12"
             initial="hidden"
             whileInView="show"
             viewport={viewHero}
@@ -216,16 +216,13 @@ export function Hero() {
           >
             <motion.div
               variants={heroLineVariants}
-              className="mt-2 hidden h-[clamp(4rem,12vh,6.5rem)] w-1 shrink-0 rounded-full bg-primary sm:block"
+              className="mt-1 hidden h-[clamp(3.5rem,10vw,5.75rem)] w-1 shrink-0 rounded-full bg-primary sm:block lg:mt-2"
               aria-hidden
             />
-            <motion.div
-              className="min-w-0 lg:col-start-2"
-              variants={heroColumnStagger}
-            >
+            <motion.div className="min-w-0 max-w-full" variants={heroColumnStagger}>
               <motion.p
                 variants={heroItemVariants}
-                className="site-eyebrow mb-5 sm:mb-6"
+                className="site-eyebrow mb-5 max-w-2xl sm:mb-6"
               >
                 {home.hero.eyebrow}
               </motion.p>
@@ -243,30 +240,32 @@ export function Hero() {
               </motion.p>
               <motion.div
                 variants={heroItemVariants}
-                className="mt-10 flex w-full flex-col gap-3 sm:mt-14 sm:max-w-xl sm:flex-row sm:flex-wrap sm:items-center sm:gap-4"
+                className="mt-10 flex w-full min-w-0 max-w-2xl flex-col gap-3 sm:mt-14 sm:flex-row sm:flex-wrap sm:items-stretch sm:gap-4"
               >
                 <Button
                   asChild
                   size="lg"
-                  className="group h-12 w-full min-h-12 px-8 transition-[transform,box-shadow] duration-200 hover:-translate-y-px sm:h-11 sm:w-auto"
+                  className="group h-12 min-h-12 w-full px-8 transition-[transform,box-shadow] duration-200 hover:-translate-y-px sm:h-11 sm:min-h-11 sm:w-auto sm:min-w-0 sm:flex-1 sm:basis-56 sm:whitespace-normal"
                 >
-                  <Link href="/contact">
+                  <Link href="/contact" className="inline-flex items-center justify-center gap-2 text-center">
                     {home.hero.primaryCta}
-                    <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-0.5" />
+                    <ArrowRight className="size-4 shrink-0 transition-transform duration-200 group-hover:translate-x-0.5" />
                   </Link>
                 </Button>
                 <Button
                   asChild
                   variant="outline"
                   size="lg"
-                  className="h-12 w-full min-h-12 border-border/80 bg-background/40 backdrop-blur-sm transition-[transform,background-color,border-color] duration-300 hover:-translate-y-0.5 hover:bg-background/70 sm:h-11 sm:w-auto"
+                  className="h-12 min-h-12 w-full border-border/80 bg-background/40 backdrop-blur-sm transition-[transform,background-color,border-color] duration-300 hover:-translate-y-0.5 hover:bg-background/70 sm:h-11 sm:min-h-11 sm:w-auto sm:min-w-0 sm:flex-1 sm:basis-48"
                 >
-                  <Link href="/contact">{home.hero.secondaryCta}</Link>
+                  <Link href="/contact" className="text-center">
+                    {home.hero.secondaryCta}
+                  </Link>
                 </Button>
               </motion.div>
               <motion.p
                 variants={heroItemVariants}
-                className="mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground sm:mt-8"
+                className="mt-6 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:mt-8"
               >
                 {home.hero.supportingLine}
               </motion.p>
@@ -275,11 +274,11 @@ export function Hero() {
               home.hero.trustChips.length > 0 ? (
                 <motion.ul
                   variants={heroItemVariants}
-                  className="mt-6 flex max-w-xl flex-wrap gap-2 sm:mt-7"
+                  className="mt-6 flex max-w-full flex-wrap gap-x-2 gap-y-2 sm:mt-7 sm:max-w-2xl"
                 >
                   {home.hero.trustChips.map((chip) => (
-                    <li key={chip}>
-                      <span className="inline-flex items-center rounded-full border border-border/80 bg-card/70 px-3 py-1 font-diagram text-xs font-medium text-muted-foreground shadow-sm">
+                    <li key={chip} className="max-w-full min-w-0">
+                      <span className="inline-flex max-w-full items-center break-words rounded-full border border-border/80 bg-card/70 px-3 py-1.5 text-left font-diagram text-xs font-medium leading-snug text-muted-foreground shadow-sm">
                         {chip}
                       </span>
                     </li>
@@ -287,17 +286,17 @@ export function Hero() {
                 </motion.ul>
               ) : null}
               {"tertiaryCta" in home.hero && home.hero.tertiaryHref ? (
-                <motion.p variants={heroItemVariants} className="mt-5 sm:mt-6">
+                <motion.p variants={heroItemVariants} className="mt-5 max-w-2xl sm:mt-6">
                   <Link
                     href={home.hero.tertiaryHref}
-                    className="font-diagram text-sm font-semibold text-brand-blue underline-offset-4 transition-colors hover:text-brand-blue/90 hover:underline"
+                    className="inline-block break-words font-diagram text-sm font-semibold text-brand-blue underline-offset-4 transition-colors hover:text-brand-blue/90 hover:underline"
                   >
                     {home.hero.tertiaryCta} →
                   </Link>
                 </motion.p>
               ) : null}
             </motion.div>
-            <div className="min-w-0 lg:col-span-1 lg:col-start-3 lg:row-start-1">
+            <div className="min-w-0 max-w-full justify-self-center lg:justify-self-stretch lg:self-start">
               <HeroVisual />
             </div>
           </motion.div>
@@ -309,47 +308,49 @@ export function Hero() {
 
 function HeroCopy() {
   return (
-    <div className="grid gap-10 lg:grid-cols-[auto_minmax(0,1fr)_minmax(300px,44%)] lg:items-center lg:gap-x-10 xl:gap-x-14">
+    <div className="grid w-full min-w-0 max-w-full grid-cols-1 gap-10 lg:grid-cols-[auto_minmax(0,1fr)_minmax(0,28rem)] lg:items-start lg:gap-x-8 xl:gap-x-12">
       <div
-        className="mt-2 hidden h-[clamp(4rem,12vh,6.5rem)] w-1 shrink-0 rounded-full bg-primary sm:block"
+        className="mt-1 hidden h-[clamp(3.5rem,10vw,5.75rem)] w-1 shrink-0 rounded-full bg-primary sm:block lg:mt-2"
         aria-hidden
       />
-      <div className="min-w-0 lg:col-start-2">
-        <p className="site-eyebrow mb-5 sm:mb-6">{home.hero.eyebrow}</p>
+      <div className="min-w-0 max-w-full">
+        <p className="site-eyebrow mb-5 max-w-2xl sm:mb-6">{home.hero.eyebrow}</p>
         <h1 className="hero-headline font-display font-semibold tracking-[-0.03em] text-foreground">
           {home.hero.headline}
         </h1>
         <p className="hero-subhead site-body editorial-measure mt-7 sm:mt-9">
           {home.hero.subheadline}
         </p>
-        <div className="mt-10 flex w-full flex-col gap-3 sm:mt-14 sm:max-w-xl sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
+        <div className="mt-10 flex w-full min-w-0 max-w-2xl flex-col gap-3 sm:mt-14 sm:flex-row sm:flex-wrap sm:items-stretch sm:gap-4">
           <Button
             asChild
             size="lg"
-            className="group h-12 w-full min-h-12 px-8 transition-[transform,box-shadow] duration-200 hover:-translate-y-px sm:h-11 sm:w-auto"
+            className="group h-12 min-h-12 w-full px-8 transition-[transform,box-shadow] duration-200 hover:-translate-y-px sm:h-11 sm:min-h-11 sm:w-auto sm:min-w-0 sm:flex-1 sm:basis-56"
           >
-            <Link href="/contact">
+            <Link href="/contact" className="inline-flex items-center justify-center gap-2 text-center">
               {home.hero.primaryCta}
-              <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-0.5" />
+              <ArrowRight className="size-4 shrink-0 transition-transform duration-200 group-hover:translate-x-0.5" />
             </Link>
           </Button>
           <Button
             asChild
             variant="outline"
             size="lg"
-            className="h-12 w-full min-h-12 border-border/80 bg-background/40 backdrop-blur-sm transition-[transform,background-color,border-color] duration-300 hover:-translate-y-0.5 hover:bg-background/70 sm:h-11 sm:w-auto"
+            className="h-12 min-h-12 w-full border-border/80 bg-background/40 backdrop-blur-sm transition-[transform,background-color,border-color] duration-300 hover:-translate-y-0.5 hover:bg-background/70 sm:h-11 sm:min-h-11 sm:w-auto sm:min-w-0 sm:flex-1 sm:basis-48"
           >
-            <Link href="/contact">{home.hero.secondaryCta}</Link>
+            <Link href="/contact" className="text-center">
+              {home.hero.secondaryCta}
+            </Link>
           </Button>
         </div>
-        <p className="mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground sm:mt-8">
+        <p className="mt-6 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:mt-8">
           {home.hero.supportingLine}
         </p>
         {home.hero.trustChips && home.hero.trustChips.length > 0 ? (
-          <ul className="mt-6 flex max-w-xl flex-wrap gap-2 sm:mt-7">
+          <ul className="mt-6 flex max-w-full flex-wrap gap-x-2 gap-y-2 sm:mt-7 sm:max-w-2xl">
             {home.hero.trustChips.map((chip) => (
-              <li key={chip}>
-                <span className="inline-flex items-center rounded-full border border-border/80 bg-card/70 px-3 py-1 font-diagram text-xs font-medium text-muted-foreground shadow-sm">
+              <li key={chip} className="max-w-full min-w-0">
+                <span className="inline-flex max-w-full items-center break-words rounded-full border border-border/80 bg-card/70 px-3 py-1.5 text-left font-diagram text-xs font-medium leading-snug text-muted-foreground shadow-sm">
                   {chip}
                 </span>
               </li>
@@ -357,17 +358,17 @@ function HeroCopy() {
           </ul>
         ) : null}
         {home.hero.tertiaryHref ? (
-          <p className="mt-5 sm:mt-6">
+          <p className="mt-5 max-w-2xl sm:mt-6">
             <Link
               href={home.hero.tertiaryHref}
-              className="font-diagram text-sm font-semibold text-brand-blue underline-offset-4 hover:underline"
+              className="inline-block break-words font-diagram text-sm font-semibold text-brand-blue underline-offset-4 hover:underline"
             >
               {home.hero.tertiaryCta} →
             </Link>
           </p>
         ) : null}
       </div>
-      <div className="min-w-0 lg:col-span-1 lg:col-start-3 lg:row-start-1">
+      <div className="min-w-0 max-w-full justify-self-center lg:justify-self-stretch lg:self-start">
         <HeroVisual />
       </div>
     </div>

@@ -458,9 +458,10 @@
 
   .hero-headline {
     font-size: clamp(2.125rem, 1.35rem + 3.2vw, 3.5rem);
-    line-height: 1.05;
-    max-width: min(42rem, 100%);
+    line-height: 1.06;
+    max-width: min(38rem, 100%);
     text-wrap: balance;
+    overflow-wrap: anywhere;
     letter-spacing: -0.035em;
   }
 

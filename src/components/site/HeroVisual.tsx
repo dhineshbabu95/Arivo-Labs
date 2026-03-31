@@ -35,7 +35,7 @@ export function HeroVisual() {
           alt={visual.alt}
           slotLabel="Add: public/images/_source/hero-visual.* then npm run images:resize → 1200×900 WebP."
           aspectClass="aspect-[4/3]"
-          sizes="(max-width: 1024px) 90vw, (max-width: 1280px) 400px, 512px"
+          sizes="(max-width: 1023px) min(100vw - 3rem, 36rem), (max-width: 1279px) 320px, min(448px, 28rem)"
           priority
         />
       </motion.div>

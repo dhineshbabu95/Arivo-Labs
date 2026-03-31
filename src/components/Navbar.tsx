@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
-import { BrandLogo } from "@/components/BrandLogo";
+import { Logo } from "@/components/Logo";
 import { Container } from "@/components/Container";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { Button } from "@/components/ui/button";
@@ -33,17 +33,17 @@ export function Navbar() {
             className="flex shrink-0 items-center py-1 outline-none transition-opacity hover:opacity-90 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
           >
             <span className="sr-only">{site.name}</span>
-            <BrandLogo variant="icon" size="md" className="md:hidden" priority />
-            <BrandLogo
+            <Logo variant="icon" size="md" className="md:hidden" priority />
+            <Logo
               variant="horizontal"
               size="md"
-              className="hidden md:inline-flex 2xl:hidden"
+              className="hidden md:block 2xl:hidden"
               priority
             />
-            <BrandLogo
+            <Logo
               variant="horizontal"
               size="lg"
-              className="hidden 2xl:inline-flex"
+              className="hidden 2xl:block"
               priority
             />
           </Link>
@@ -92,7 +92,7 @@ export function Navbar() {
         >
           <div className="flex flex-col gap-0.5 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
             <div className="mb-2 flex items-center px-3">
-              <BrandLogo variant="icon" size="sm" />
+              <Logo variant="icon" size="sm" />
               <span className="ml-2 text-sm font-medium text-foreground">{site.name}</span>
             </div>
             {NAV.map((item) => (

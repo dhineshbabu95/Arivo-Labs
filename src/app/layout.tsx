@@ -115,7 +115,7 @@ export default function RootLayout({
             <SplashTransitionChrome>
               <ScrollToTop />
               <Navbar />
-              <main className="relative z-10">{children}</main>
+              <main className="relative z-10 min-w-0">{children}</main>
               <Footer />
             </SplashTransitionChrome>
           </SplashTransitionProvider>
