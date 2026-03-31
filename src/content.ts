@@ -4,6 +4,7 @@
 
 export const site = {
   name: "Dhinesh Babu",
+  company: "Arivo Labs",
   tagline: "Cloud, data & web systems",
   url: "https://dhineshbabu.com",
   email: "dhinesh.babu2511@gmail.com",
@@ -107,6 +108,7 @@ export const about = {
     "Melbourne included a long lockdown and a slower season than I expected. Looking back, it pushed me to build better habits, look after myself properly, and choose my next move with more care. Sydney has been that next chapter — lighter, busier, and full of things I chose on purpose.",
     "These days I train Brazilian Jiu-Jitsu and CrossFit — simple anchors that keep me steady. Shipping a real project end to end again reminded me how much I love the craft of building.",
     "Work has taken me through a few different worlds — big tech, telco, measurement, agency. The thread stays the same: cloud, data, automation, and systems that still work the week after you ship.",
+    "I run Arivo Labs, where I help teams design and ship practical cloud, web, and data systems with clarity and long-term maintainability.",
   ],
 };
 
@@ -165,7 +167,7 @@ export const services = {
 export const contact = {
   title: "Contact",
   intro:
-    "If you want to tighten a workflow, automate something, or talk through an idea, send a note. I'll reply with a clear, honest take on what might help next.",
+    "If you want to tighten a workflow, automate something, or talk through an idea, send a note. I also take on selected consulting projects through Arivo Labs.",
   form: {
     name: "Name",
     email: "Email",
@@ -382,6 +384,7 @@ export const nav = {
 export const footer = {
   tagline:
     "Cloud, data, AI, and internal tools — built to stay useful after launch.",
+  companyLine: "Founder, Arivo Labs",
   links: [
     { href: "/services", label: "Services" },
     { href: "/work", label: "Projects" },

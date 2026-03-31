@@ -19,6 +19,9 @@ export function Footer() {
             <p className="mt-3 max-w-sm text-sm leading-relaxed text-muted-foreground">
               {footer.tagline}
             </p>
+            <p className="mt-2 text-sm text-muted-foreground/95">
+              {footer.companyLine}
+            </p>
             <p className="mt-2 text-xs text-muted-foreground/90">{site.location}</p>
           </div>
           <nav className="flex flex-wrap gap-x-6 gap-y-2 sm:gap-x-10 sm:gap-y-3">
